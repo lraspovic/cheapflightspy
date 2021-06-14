@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../static/style.css" />
+  <link href="//code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+  </link>
+  <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <title>Flight search</title>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".inputOrigin").autocomplete({
+        source: '{{ url_for("autocomplete") }}',
+        minLength: 1,
+        delay: 100,
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    {% if message %}
+    <p class="message">{{ message | safe }}</p>
+    {% endif %}
+    <form action="/submit" method="POST">
+      <div class="form-group">
+        <h3>From</h3>
+        <input type="text" name="dp_airport" placeholder="Departure airport" class="inputOrigin" />
+      </div>
+      <div class="form-group">
+        <h3>To</h3>
+        <input type="text" name="ds_airport" placeholder="Destination airport" class="inputOrigin" />
+      </div>
+      <div class="form-group">
+        <label for="departure_date">
+          <h3>Departure date</h3>
+        </label>
+        <input type="date" id="departure_date" name="departure_date" value="2021-07-01">
+      </div>
+      <div class="form-group">
+        <label for="return_date">
+          <h3>Return date</h3>
+        </label>
+        <input type="date" id="return_date" name="return_date" value="2021-07-05">
+      </div>
+      <div class="form-group">
+        <h3>Number od passengers</h3>
+        <input type="number" name="n_passengers" value=1 />
+      </div>
+      <div class="form-group">
+        <h3>Currency</h3>
+        <select name="currency">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="HRK">HRK</option>
+        </select>
+      </div>
+      <input type="submit" value="Find" class="btn" />
+    </form>
+  </div>
+</body>
+
+</html>
