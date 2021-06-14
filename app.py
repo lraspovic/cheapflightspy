@@ -10,7 +10,7 @@ from geopy.distance import geodesic
 app = Flask(__name__)
 
 app.debug = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://usflwvgarwfglx:71a3c6999b27fd855d0040ba890a56c25b32993d6bddb416bfff8f6cf6601713@ec2-34-230-115-172.compute-1.amazonaws.com:5432/d7jtad8lopgmme'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://usflwvgarwfglx:71a3c6999b27fd855d0040ba890a56c25b32993d6bddb416bfff8f6cf6601713@ec2-34-230-115-172.compute-1.amazonaws.com:5432/d7jtad8lopgmme'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
