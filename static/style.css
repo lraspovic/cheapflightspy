@@ -18,6 +18,12 @@ body {
 	padding: 0 2rem;
 }
 
+.result-container {
+	margin: 1rem;
+	overflow: auto;
+	padding: 1rem;
+}
+
 h1 {
 	color: #777;
 	margin-top: 15px;
@@ -36,12 +42,6 @@ img {
 	padding: 5px;
 	border: #ccc dotted 2px;
 	margin-top: 2rem;
-}
-
-.logo {
-	width: 300px;
-	display: block;
-	margin: auto;
 }
 
 .form-group {
@@ -66,36 +66,4 @@ input[type='text'], select, textarea {
 	cursor: pointer;
 	outline: none;
 	margin-top: 1rem;
-}
-
-table {
-	width: 100%;
-	margin: auto;
-}
-
-tr {
-	width: 100%;
-}
-
-tr:hover {
-	background-color: #9e9797;
-}
-
-th, td {
-	box-sizing: border-box;
-	padding: 15px;
-}
-
-thead th {
-	background: #000;
-	color: #fff;
-	text-align: left;
-}
-
-tbody {
-	text-align: left;
-}
-
-tbody th {
-	background: #eee;
 }

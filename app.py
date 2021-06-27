@@ -52,6 +52,8 @@ class Flight(db.Model):
 
 # Create html table
 class ItemTable(Table):
+    table_id = 'myTable'
+    classes = ['table', 'table-striped']
     departure_airport = Col('From')
     destination_airport = Col('To')
     departure_date = Col('Departure date')
@@ -212,7 +214,6 @@ def get_airport_coords(iataCode, airportName):
     data = amadeus.reference_data.locations.get(keyword=airportName, subType=Location.ANY).data
     for fli in data:
         if fli['name'] == airportName and fli['iataCode'] == iataCode:
-
             return fli['geoCode']['latitude'], fli['geoCode']['longitude'],
 
 if __name__ == '__main__':
